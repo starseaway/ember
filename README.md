@@ -241,52 +241,45 @@ class NetworkLogPrinter(private val endpoint: String) : LogPrinter {
 
 源文件：[AppApplication.java](app/src/main/java/com/xinyi/app/ember/AppApplication.java)
 
-```java
-package com.xinyi.app.ember;
+```kotlin
+class AppApplication : Application() {
 
-import android.app.Application;
-import android.util.Log;
+    override fun onCreate() {
+        super.onCreate()
 
-import com.xinyi.ember.Ember;
-import com.xinyi.ember.config.LogConfig;
-import com.xinyi.ember.extensions.ConfigBuilderExtension;
+        val config = Ember.builder()
+                .addFilePrinter(File(filesDir, "logs").absolutePath)
+                .build()
+        Ember.init(config)
 
-import java.io.File;
+        // 运行演示日志
+        Ember.v("Verbose：详细调试信息")
+        Ember.d("Debug：应用启动检查通过")
+        Ember.i("Info：用户已进入首页")
+        Ember.w("Warn：缓存即将过期")
+        Ember.e("Error：接口返回业务错误码 500")
 
-public class AppApplication extends Application {
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        File logDir = new File(getFilesDir(), "logs");
-        LogConfig.Builder builder = Ember.builder();
-        ConfigBuilderExtension.addFilePrinter(
-            builder,
-            logDir.getAbsolutePath(),
-            2L * 1024 * 1024 // 单个文件大小上限 2 MB
-        );
-        Ember.init(builder.build());
-
-        Ember.v("Verbose：详细调试信息");
-        Ember.d("Debug：应用启动检查通过");
-        Ember.i("Info：用户已进入首页");
-        Ember.w("Warn：缓存即将过期");
-        Ember.e("Error：接口返回业务错误码 500");
-
-        String json = "{\"name\":\"ember\",\"version\":1,\"features\":[\"logcat\",\"file\",\"collector\"]}";
-        Ember.json(json, true);
+        val json = """{"name":"ember","version":1,"features":["logcat","file","collector"]}"""
+        Ember.json(json, isFormatJson = true)
 
         try {
-            throw new RuntimeException("模拟网络超时");
-        } catch (Exception exception) {
-            Ember.e(Log.getStackTraceString(exception));
+            throw RuntimeException("模拟网络超时")
+        } catch (exception: Exception) {
+            Ember.e(Log.getStackTraceString(exception))
         }
     }
 }
 ```
+
+Logcat 输出：
+
 ![demo_logcat.png](readme/img/demo_logcat.png)
 
+日志文件目录：
+
 ![demo_file_directory.png](readme/img/demo_file_directory.png)
+
+日志文件内容：
 
 ![demo_file_log.png](readme/img/demo_file_log.png)
 
