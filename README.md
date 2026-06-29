@@ -6,8 +6,6 @@ A modern Android logging framework with Logcat, file logging, collectors, and ex
 
 <img src="readme/img/ember_inbetweening.png" width="300" alt="Ember Logo">
 
-<br><br>
-
 <h3>木材燃烧一时，余烬铭记过往。</h3>
 
 <p><em>Timber burns for a moment. Embers remember the past.</em></p>
