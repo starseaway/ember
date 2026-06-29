@@ -47,7 +47,7 @@ A modern Android logging framework with Logcat, file logging, collectors, and ex
 |------------|--------------------|
 | Min SDK    | 19（Android 4.4）及以上 |
 | JVM Target | 1.8                |
-| Kotlin     | 1.6+               |
+| Kotlin     | 1.9+               |
 
 ---
 
