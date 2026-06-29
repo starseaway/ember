@@ -4,7 +4,7 @@ A modern Android logging framework with Logcat, file logging, collectors, and ex
 
 <div align="center">
 
-<img src="ember_pic.png" width="500" alt="Ember Logo">
+<img src="readme/img/ember_inbetweening.png" width="300" alt="Ember Logo">
 
 <br><br>
 
