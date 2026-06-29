@@ -8,7 +8,7 @@ A modern Android logging framework with Logcat, file logging, collectors, and ex
 
   <br>
 
-  <img src="readme/img/ember_wordmark_zh_1.png" width="200" alt="余烬">
+  <img src="readme/img/ember_wordmark_zh_1.png" width="180" alt="余烬">
 
   <h3>木材燃烧一时，余烬铭记过往。</h3>
 
