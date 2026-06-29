@@ -7,7 +7,6 @@ A modern Android logging framework with Logcat, file logging, collectors, and ex
 <img src="readme/img/ember_inbetweening.png" width="300" alt="Ember Logo">
 
 <img src="readme/img/ember_logo_text.png" width="100" alt="Ember Text">
-![img.png](readme/img/img.png)<h1>余烬</h1>
 
 <h3>木材燃烧一时，余烬铭记过往。</h3>
 
