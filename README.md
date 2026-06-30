@@ -239,7 +239,7 @@ class NetworkLogPrinter(private val endpoint: String) : LogPrinter {
 
 演示代码见下方，`app` 模块启动后会自动打出各等级日志、JSON 与异常堆栈，并同步异步写入本地文件。
 
-源文件：[AppApplication.java](app/src/main/java/com/xinyi/app/ember/AppApplication.java)
+源文件：[AppApplication.kt](app/src/main/java/com/xinyi/app/ember/AppApplication.kt)
 
 ```kotlin
 class AppApplication : Application() {
